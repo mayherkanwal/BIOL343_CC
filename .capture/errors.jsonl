@@ -1,0 +1,21 @@
+{"chunk":null,"ts":"2026-09-24T17:48:36Z","pid":26856,"engine":"r","severity":"warning","render":false,"warning":"## Warning: cannot open file './data/A1_Data_Excel.csv': No such file or directory"}
+{"chunk":null,"ts":"2026-09-24T17:48:36Z","pid":26856,"engine":"r","severity":"error","render":false,"text":"## Error: cannot open the connection"}
+{"chunk":null,"ts":"2026-09-24T17:49:48Z","pid":26856,"engine":"r","severity":"warning","render":false,"warning":"## Warning: cannot open file './week01-lecture/data/A1_Data_Excel.csv': No such file or directory"}
+{"chunk":null,"ts":"2026-09-24T17:49:48Z","pid":26856,"engine":"r","severity":"error","render":false,"text":"## Error: cannot open the connection"}
+{"chunk":null,"ts":"2026-09-24T17:50:17Z","pid":26856,"engine":"r","severity":"warning","render":false,"warning":"## Warning: cannot open file './biol343/week01-lecture/data/A1_Data_Excel.csv': No such file or directory"}
+{"chunk":null,"ts":"2026-09-24T17:50:17Z","pid":26856,"engine":"r","severity":"error","render":false,"text":"## Error: cannot open the connection"}
+{"chunk":null,"ts":"2026-09-24T17:53:29Z","pid":26856,"engine":"r","severity":"warning","render":false,"warning":"## Warning: cannot open file './data/A1_Data_Excel.csv': No such file or directory"}
+{"chunk":null,"ts":"2026-09-24T17:53:29Z","pid":26856,"engine":"r","severity":"error","render":false,"text":"## Error: cannot open the connection"}
+{"chunk":null,"ts":"2026-09-24T17:54:49Z","pid":26856,"engine":"r","severity":"warning","render":false,"warning":"## Warning: cannot open file './data/A1_Data_Excel.csv': No such file or directory"}
+{"chunk":null,"ts":"2026-09-24T17:54:49Z","pid":26856,"engine":"r","severity":"error","render":false,"text":"## Error: cannot open the connection"}
+{"chunk":null,"ts":"2026-09-24T17:56:14Z","pid":26856,"engine":"r","severity":"error","render":false,"text":"## Error: Syntax error: unexpected symbol"}
+{"chunk":null,"ts":"2026-09-24T18:04:22Z","pid":26856,"engine":"r","severity":"error","render":false,"text":"## Error: object 'assn1_data_mod' not found"}
+{"chunk":null,"ts":"2026-09-25T00:07:48Z","pid":26856,"engine":"r","severity":"error","render":false,"text":"## Error: object 'ccl_data_mod' not found"}
+{"chunk":null,"ts":"2026-09-25T00:08:11Z","pid":26856,"engine":"r","severity":"error","render":false,"text":"## Error: object 'population' not found"}
+{"chunk":null,"ts":"2026-09-25T00:49:08Z","pid":26856,"engine":"r","severity":"error","render":false,"text":"## Error: there is no package called ‘gglot2’"}
+{"chunk":null,"ts":"2026-09-25T01:19:28Z","pid":26856,"engine":"r","severity":"error","render":false,"text":"## Error: there is no package called ‘gglot2’"}
+{"chunk":null,"ts":"2026-09-25T01:19:59Z","pid":26856,"engine":"r","severity":"error","render":false,"text":"## Error: there is no package called ‘gglot2’"}
+{"chunk":null,"ts":"2026-09-25T01:20:41Z","pid":26856,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘ggplot2’ was built under R version 4.5.3"}
+{"chunk":null,"ts":"2026-09-25T01:21:16Z","pid":26856,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘ggplot2’ is in use and will not be installed"}
+{"chunk":null,"ts":"2026-09-25T01:21:17Z","pid":26856,"engine":"r","severity":"error","render":false,"text":"## Error: could not find function \"theme_classsic\""}
+{"chunk":null,"ts":"2026-09-25T01:22:14Z","pid":26856,"engine":"r","severity":"warning","render":false,"warning":"## Warning: package ‘ggplot2’ is in use and will not be installed"}
