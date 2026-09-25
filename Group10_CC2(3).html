@@ -206,22 +206,22 @@ positpal::start("FILENAME.Rmd")</code></pre>
 <tr class="odd">
 <td>population_type</td>
 <td>asexual or sexual</td>
-<td>27</td>
+<td>unitless</td>
 </tr>
 <tr class="even">
 <td>ovary_width</td>
 <td>width of ovary</td>
-<td>29</td>
+<td>mm</td>
 </tr>
 <tr class="odd">
 <td>ovary_height</td>
 <td>height of ovary</td>
-<td>31</td>
+<td>mm</td>
 </tr>
 <tr class="even">
 <td>flower_number</td>
 <td>number of flowers per population</td>
-<td>31</td>
+<td>#</td>
 </tr>
 </tbody>
 </table>
@@ -231,17 +231,24 @@ positpal::start("FILENAME.Rmd")</code></pre>
 <h1>Import and clean the data</h1>
 <p>Copy <code>A1_Data_Excel.csv</code> from your Coding Challenge 1 project into this project’s <code>data</code> folder. In the chunk below, import it with <code>read.csv()</code>, keep the appropriate rows and columns (as you did in Coding Challenge 1), and add the <code>ovary_area</code> column (Chapter 3, <em>New Columns</em>). Save the cleaned data as <code>cc1_data</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cc1_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"./data/A1_Data_Excel(2).csv"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cc1_data_mod <span class="ot">&lt;-</span> cc1_data[<span class="dv">1</span><span class="sc">:</span><span class="dv">46</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cc1data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"./data/A1_Data_Excel(2).csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cc1_data <span class="ot">&lt;-</span> cc1data[<span class="dv">1</span><span class="sc">:</span><span class="dv">46</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>cc1_data_mod<span class="sc">$</span>ovary_area <span class="ot">&lt;-</span> cc1_data_mod<span class="sc">$</span>ovary_width<span class="sc">*</span>cc1_data_mod<span class="sc">$</span>ovary_height</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>cc1_data<span class="sc">$</span>ovary_area <span class="ot">&lt;-</span> cc1_data<span class="sc">$</span>ovary_width<span class="sc">*</span>cc1_data<span class="sc">$</span>ovary_height</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now document the inspection commands you used (<code>class()</code>, <code>dim()</code>, <code>str()</code>, <code>head()</code>, <code>tail()</code>) in the chunk below. Add the chunk option that <strong>shows this code in the report but does not run it</strong>, so that the reader can see what you checked without pages of output.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(cc1_data)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(cc1_data)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cc1_data)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cc1_data)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(cc1_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="equation" class="level1">
 <h1>Equation</h1>
 <p>Write the formula you used for ovary area as a <strong>full-line equation</strong> in LaTeX (Chapter 5, <em>Equations</em>), using <code>\times</code> for multiplication. Then, in a sentence of ordinary text, state its units using an <strong>in-line equation</strong> with a superscript.</p>
-<p><span class="math display">\[\text{ovary area}=\text{ovary width}\times\text{ovary height}\]</span></p>
+<p><span class="math display">\[\text{ovary area}=\text{ovary width}\times\text{ovary height}\]</span> The units of ovary area are <span class="math inline">\(mm^2\)</span>.</p>
 </section>
 <section id="dynamic-table" class="level1">
 <h1>Dynamic table</h1>
@@ -306,7 +313,7 @@ positpal::start("FILENAME.Rmd")</code></pre>
 <li>Make sure the repository contains the <code>.Rmd</code>, <code>data/A1_Data_Excel.csv</code>, <code>images/</code> with your photo, and the knitted <code>.html</code>, and that everything is <strong>committed and pushed</strong>.</li>
 <li>Paste the <strong>SHA</strong> of your final commit (Chapter 6, <em>Timeline</em>; the 7-character code shown beside each commit on GitHub) below, formatted as in-line code with back-ticks.</li>
 </ol>
-<p>Final commit SHA:</p>
+<p>Final commit SHA: ‘03b7a14’</p>
 </section>
 <section id="do-this-last" class="level1 unnumbered">
 <h1 class="unnumbered">DO THIS LAST</h1>

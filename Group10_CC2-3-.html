@@ -450,22 +450,22 @@ and dashes</em> format from the chapter, not R code.</p>
 <tr class="odd">
 <td>population_type</td>
 <td>asexual or sexual</td>
-<td>27</td>
+<td>unitless</td>
 </tr>
 <tr class="even">
 <td>ovary_width</td>
 <td>width of ovary</td>
-<td>29</td>
+<td>mm</td>
 </tr>
 <tr class="odd">
 <td>ovary_height</td>
 <td>height of ovary</td>
-<td>31</td>
+<td>mm</td>
 </tr>
 <tr class="even">
 <td>flower_number</td>
 <td>number of flowers per population</td>
-<td>31</td>
+<td>#</td>
 </tr>
 </tbody>
 </table>
@@ -479,15 +479,20 @@ below, import it with <code>read.csv()</code>, keep the appropriate rows
 and columns (as you did in Coding Challenge 1), and add the
 <code>ovary_area</code> column (Chapter 3, <em>New Columns</em>). Save
 the cleaned data as <code>cc1_data</code>.</p>
-<pre class="r"><code>cc1_data &lt;- read.csv(&quot;./data/A1_Data_Excel(2).csv&quot;)
-cc1_data_mod &lt;- cc1_data[1:46, 1:8]
+<pre class="r"><code>cc1data &lt;- read.csv(&quot;./data/A1_Data_Excel(2).csv&quot;)
+cc1_data &lt;- cc1data[1:46, 1:8]
 
-cc1_data_mod$ovary_area &lt;- cc1_data_mod$ovary_width*cc1_data_mod$ovary_height</code></pre>
+cc1_data$ovary_area &lt;- cc1_data$ovary_width*cc1_data$ovary_height</code></pre>
 <p>Now document the inspection commands you used (<code>class()</code>,
 <code>dim()</code>, <code>str()</code>, <code>head()</code>,
 <code>tail()</code>) in the chunk below. Add the chunk option that
 <strong>shows this code in the report but does not run it</strong>, so
 that the reader can see what you checked without pages of output.</p>
+<pre class="r"><code>class(cc1_data)
+dim(cc1_data)
+str(cc1_data)
+head(cc1_data)
+tail(cc1_data)</code></pre>
 </div>
 <div id="equation" class="section level1">
 <h1>Equation</h1>
@@ -497,7 +502,8 @@ equation</strong> in LaTeX (Chapter 5, <em>Equations</em>), using
 text, state its units using an <strong>in-line equation</strong> with a
 superscript.</p>
 <p><span class="math display">\[\text{ovary area}=\text{ovary
-width}\times\text{ovary height}\]</span></p>
+width}\times\text{ovary height}\]</span> The units of ovary area are
+<span class="math inline">\(mm^2\)</span>.</p>
 </div>
 <div id="dynamic-table" class="section level1">
 <h1>Dynamic table</h1>
@@ -577,7 +583,7 @@ photo, and the knitted <code>.html</code>, and that everything is
 <em>Timeline</em>; the 7-character code shown beside each commit on
 GitHub) below, formatted as in-line code with back-ticks.</li>
 </ol>
-<p>Final commit SHA:</p>
+<p>Final commit SHA: ‘03b7a14’</p>
 </div>
 <div id="do-this-last" class="section level1 unnumbered">
 <h1 class="unnumbered">DO THIS LAST</h1>

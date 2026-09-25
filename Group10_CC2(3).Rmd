@@ -58,30 +58,30 @@ Table
 ----------------------------------------------------------
 variable        | description                      | units
 ----------------|----------------------------------|------
-population_type |asexual or sexual                 | 27
-ovary_width     |width of ovary                    | 29
-ovary_height    |height of ovary                   | 31
-flower_number   |number of flowers per population  | 31
+population_type |asexual or sexual                 | unitless
+ovary_width     |width of ovary                    | mm
+ovary_height    |height of ovary                   | mm
+flower_number   |number of flowers per population  | #
 
 # Import and clean the data
 
 Copy `A1_Data_Excel.csv` from your Coding Challenge 1 project into this project's `data` folder. In the chunk below, import it with `read.csv()`, keep the appropriate rows and columns (as you did in Coding Challenge 1), and add the `ovary_area` column (Chapter 3, *New Columns*). Save the cleaned data as `cc1_data`.
 
 ```{r import-clean}
-cc1_data <- read.csv("./data/A1_Data_Excel(2).csv")
-cc1_data_mod <- cc1_data[1:46, 1:8]
+cc1data <- read.csv("./data/A1_Data_Excel(2).csv")
+cc1_data <- cc1data[1:46, 1:8]
 
-cc1_data_mod$ovary_area <- cc1_data_mod$ovary_width*cc1_data_mod$ovary_height
+cc1_data$ovary_area <- cc1_data$ovary_width*cc1_data$ovary_height
 ```
 
 Now document the inspection commands you used (`class()`, `dim()`, `str()`, `head()`, `tail()`) in the chunk below. Add the chunk option that **shows this code in the report but does not run it**, so that the reader can see what you checked without pages of output.
 
-```{r inspect,include=F}
-class(cc1_data_mod)
-dim(cc1_data_mod)
-str(cc1_data_mod)
-head(cc1_data_mod)
-tail(cc1_data_mod)
+```{r inspect,eval=FALSE}
+class(cc1_data)
+dim(cc1_data)
+str(cc1_data)
+head(cc1_data)
+tail(cc1_data)
 ```
 
 # Equation
@@ -89,14 +89,14 @@ tail(cc1_data_mod)
 Write the formula you used for ovary area as a **full-line equation** in LaTeX (Chapter 5, *Equations*), using `\times` for multiplication. Then, in a sentence of ordinary text, state its units using an **in-line equation** with a superscript.
 
 $$\text{ovary area}=\text{ovary width}\times\text{ovary height}$$
-
+The units of ovary area are $mm^2$. 
 
 # Dynamic table
 
 **a.** In the chunk below, calculate the mean `ovary_area` for each `population_type` with `aggregate()` (Chapter 3, *Other Functions*) and save the result as `area_means`. This chunk should run but be **completely hidden** in the report.
 
 ```{r area-means, include=FALSE}
-area_means <- aggregate(ovary_area~population_type,data=cc1_data_mod,FUN = mean)
+area_means <- aggregate(ovary_area~population_type,data=cc1_data,FUN = mean)
 
 ```
 
@@ -114,7 +114,7 @@ Make a histogram of `ovary_area` with `ggplot()` + `geom_histogram()` (Chapter 4
 #install.packages("ggplot2")
 library(ggplot2)
 
-ggplot(cc1_data_mod, aes(x=ovary_area))+geom_histogram(binwidth=1)+facet_wrap(~population_type)+labs(x="ovary area(mm^2)",y="count",title="Ovary Area by population type")+theme_classic()
+ggplot(cc1_data, aes(x=ovary_area))+geom_histogram(binwidth=1)+facet_wrap(~population_type)+labs(x="ovary area(mm^2)",y="count",title="Ovary Area by population type")+theme_classic()
 ```
 
 # Image
@@ -133,7 +133,7 @@ Your project folder is a GitHub repository (Chapter 6). Before you submit:
 1. Make sure the repository contains the `.Rmd`, `data/A1_Data_Excel.csv`, `images/` with your photo, and the knitted `.html`, and that everything is **committed and pushed**.
 1. Paste the **SHA** of your final commit (Chapter 6, *Timeline*; the 7-character code shown beside each commit on GitHub) below, formatted as in-line code with back-ticks.
 
-Final commit SHA: 
+Final commit SHA: '03b7a14'
 
 # DO THIS LAST {-}
 
